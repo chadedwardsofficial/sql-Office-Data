@@ -102,6 +102,14 @@ function viewDepartments() {
     }
   );
 }
+function viewEmployees() {
+  db.query(
+    "SELECT * FROM employee ",
+    function (err, results) {
+      console.table(results);
+    }
+  );
+}
 
 function addDepartment() {
   inquirer
@@ -115,6 +123,45 @@ function addDepartment() {
     let name = res;
     db.query("INSERT INTO department SET ?", name, function (err, results) {
       console.log(`Added Department!`);
+      
+    });
+  })
+  .then(() => console.log("Added Department!") )
+  .then(() => loadPrompts() );
+}
+function addEmployee() {
+  inquirer
+  .prompt([
+    {
+      type: "input",
+      name: "first_name",
+      message: "Employee First Name?",
+    },
+    {
+      type: "input",
+      name: "last_name",
+      message: "Employee Last Name?",
+    },
+    {
+      type: "list",
+      name: "role",
+      message: "What is the employee's role?",
+      choices: ["Manager", "Paper Salesmen", "Receptionist", "Human Resources", "Accounting"],                      //  COME BACK TO THIS
+    }, 
+    {
+      type: "list",
+      name: "manager",
+      message: "Who is the employee's manager?",
+      choices: ["Michael Scott", "Toby Flenderson" , "Jan Levison"],
+    },
+  ]).then(res => {
+    let first_name = res.first_name;
+    let last_name = res.last_name;
+    let role = res.role;
+    let manager = res.manager;
+
+    db.query("INSERT INTO employee SET ?", first_name, last_name, role, manager,  function (err, results) {
+      console.log(`Added Employee!`);
       
     });
   })

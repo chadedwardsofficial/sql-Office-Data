@@ -16,21 +16,24 @@ VALUES
   (6, "Receptionist", 24000, 3),
   (7, "Human Resources Lead", 45000, 3),
   (8, "Payroll", 50000, 2),
-  (9, "Warehouse Management", 38000, 5);
+  (9, "Warehouse Management", 38000, 5),
+  (10, "Human Resources Manager", 50000, 3)
+  (11, "Whatever-Kevin Does", 30,000, 2);
 
-INSERT INTO employee (id, first_name, last_name, role_id, department_id, manager_id)
+
+INSERT INTO employee (id, first_name, last_name, department, job_title, salary, manager)
 VALUES 
-  (1, "michael", "scott", 1, 4, NULL),
-  (2, "dwight", "schrute", 2, 4, 1),
-  (3, "jim", "halpert", 1, 1, 1),
-  (4, "pam", "beesly", 1, 1, 1),
-  (5, "oscar", "martinez", 1, 2, 1),
-  (6, "kevin", "malone", 1, 2, 1),
-  (7, "angela", "martin", 2, 2, 1),
-  (8, "erin", "hannon", 2, 3, 1),
-  (9, "phyllis", "vance", 1, 1, 1),
-  (10, "stanley", "hudson", 1, 1, 1),
-  (11, "andy", "bernard", 1, 1, 1),
-  (12, "kelly", "kapoor", 1, 3, 1),
-  (13, "toby", "flenderson", 3, 3, NULL),
-  (14, "darryl", "philibin", 1, 5, 1);
+  (1, "michael", "scott", "Management", "Manager", 65000, "Jan Levinson"),
+  (2, "dwight", "schrute", "Sales", "Assistant-to-the-Manager", 35000,  "Michael Scott"),
+  (3, "jim", "halpert", "Sales", "Paper Salesmen", 35000, "Michael Scott"),
+  (4, "pam", "beesly", "Sales", "Paper Salesmen", 35000, "Michael Scott"),
+  (5, "oscar", "martinez", "Accounting", "Budget Management",  50000, "Michael Scott"),
+  (6, "kevin", "malone", "Accounting", "Whatever-Kevin Does", 30000,  "Michael Scott"),
+  (7, "angela", "martin", "Accounting", "Payroll", "50000", "Michael Scott"),
+  (8, "erin", "hannon", "Human Resources", "Receptionist", 24000, "Michael Scott"),
+  (9, "phyllis", "vance", "Sales", "Paper Salesmen", 35000, "Michael Scott"),
+  (10, "stanley", "hudson", "Sales", "Paper Salesmen", 35000, "Michael Scott"),
+  (11, "andy", "bernard", "Sales", "Paper Salesmen", 35000, "Michael Scott"),
+  (12, "kelly", "kapoor", "Human Resources", "Quality Assurance", 27500, "Michael Scott"),
+  (13, "toby", "flenderson", "Human Resources", "Human Resources Manager", 24000, "Jan Levinson"),
+  (14, "darryl", "philibin", "Warehouse", "Warehouse Management", 38000, "Michael Scott"),
