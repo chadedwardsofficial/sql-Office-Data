@@ -95,18 +95,23 @@ function quit() {
 }
 
 function viewDepartments() {
+
   db.query(
     "SELECT department.id , department.name FROM department ",
     function (err, results) {
       console.table(results);
+      loadPrompts();
     }
+
   );
+   
 }
 function viewEmployees() {
   db.query(
     "SELECT * FROM employee ",
     function (err, results) {
       console.table(results);
+      loadPrompts();
     }
   );
 }
