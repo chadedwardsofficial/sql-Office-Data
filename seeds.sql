@@ -1,4 +1,4 @@
--- Insert departments
+
 INSERT INTO department (name)
 VALUES 
   ("Sales"),
@@ -7,7 +7,7 @@ VALUES
   ("Management"),
   ("Warehouse");
 
--- Insert roles
+
 INSERT INTO role (id, title, salary, department_name)
 VALUES 
   (1, "Paper Salesmen", 35000, "Sales"),
@@ -22,7 +22,7 @@ VALUES
   (10, "Human Resources Manager", 50000, "Human Resources"),
   (11, "Whatever-Kevin Does", 30000, "Accounting");
 
--- Insert employees
+
 INSERT INTO employee (id, first_name, last_name, job_title, department_name, salary, manager_name)
 VALUES 
   (1, "Michael", "Scott", "Manager", "Management", 65000, "Jan Levinson"),

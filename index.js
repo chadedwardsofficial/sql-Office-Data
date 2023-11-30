@@ -143,6 +143,54 @@ function addDepartment() {
     .then(() => console.log("Added Department!"))
     .then(() => loadPrompts());
 }
+
+
+
+
+function addRole() {
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "title",
+        message: "Role Title?",
+      },
+      {
+        type: "input",
+        name: "salary",
+        message: "Role Salary?",
+      },
+      {
+        type: "list",
+        name: "department",
+        message: "Which department does the role belong to?",
+        choices: ["Accounting", "Sales", "Management", "Human Resources", "Warehouse"],
+      },
+    ])
+    .then((res) => {
+      let { title, salary, department } = res;
+
+      
+      let roleData = {
+        title: title,
+        salary: salary,
+        department_name: department,
+      };
+
+    
+      db.query("INSERT INTO role SET ?", roleData, function (err, results) {
+        if (err) throw err;
+        console.log(`Added Role!`);
+        loadPrompts();
+      });
+    });
+}
+
+
+
+
+
+
 function addEmployee() {
   inquirer
     .prompt([
@@ -196,7 +244,7 @@ function addEmployee() {
     .then((res) => {
       let { first_name, last_name, department, job_title, salary, manager } = res;
 
-      // Prepare the data object for the query
+ 
       let employeeData = {
         first_name: first_name,
         last_name: last_name,
@@ -206,7 +254,7 @@ function addEmployee() {
         manager_name: manager,
       };
 
-      // Use the correct structure for db.query
+    
       db.query("INSERT INTO employee SET ?", employeeData, function (err, results) {
         if (err) throw err;
         console.log(`Added Employee!`);
@@ -215,13 +263,24 @@ function addEmployee() {
     });
 }
 
+
+
+
+
+
+
+
+
+
+
+
 // When application starts, loads prompts
 
 // Prompt User a  List of things they'd want to do
 
 // -- Add Department              DONE
-// -- Add Employee
-// -- Add Role
+// -- Add Employee                DONE
+// -- Add Role                    DONE
 // -- View ALl Departments        DONE
 // -- View AlL Employees          DONE
 // -- View ALL Roles              DONE

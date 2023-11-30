@@ -6,7 +6,7 @@ USE office_db;
 CREATE TABLE department (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(30),
-  INDEX (name)  -- Add index on the 'name' column
+  INDEX (name)  
 );
 
 CREATE TABLE role (
@@ -26,8 +26,8 @@ CREATE TABLE employee (
   job_title VARCHAR(30),
   department_name VARCHAR(30),
   salary DECIMAL NOT NULL,
-  manager_name VARCHAR(60),  -- Combine first_name and last_name for manager
-  INDEX (department_name),  -- Add index on the 'department_name' column
+  manager_name VARCHAR(60),  
+  INDEX (department_name),  
   FOREIGN KEY (department_name)
     REFERENCES department(name)
     ON DELETE SET NULL
