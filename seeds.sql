@@ -1,3 +1,4 @@
+-- Insert departments
 INSERT INTO department (name)
 VALUES 
   ("Sales"),
@@ -7,26 +8,25 @@ VALUES
   ("Warehouse");
 
 -- Insert roles
-INSERT INTO role (id, title, salary, department_id)
+INSERT INTO role (id, title, salary, department_name)
 VALUES 
-  (1, "Paper Salesmen", 35000, 1),
-  (2, "Budget Management", 50000, 2),
-  (3, "Quality Assurance", 27500, 3),
-  (4, "Manager", 65000, 4),
-  (5, "Assistant-to-the-Manager", 35000, 4),
-  (6, "Receptionist", 24000, 3),
-  (7, "Human Resources Lead", 45000, 3),
-  (8, "Payroll", 50000, 2),
-  (9, "Warehouse Management", 38000, 5),
-  (10, "Human Resources Manager", 50000, 3),
-  (11, "Whatever-Kevin Does", 30000, 2);
+  (1, "Paper Salesmen", 35000, "Sales"),
+  (2, "Budget Management", 50000, "Accounting"),
+  (3, "Quality Assurance", 27500, "Human Resources"),
+  (4, "Manager", 65000, "Management"),
+  (5, "Assistant-to-the-Manager", 35000, "Management"),
+  (6, "Receptionist", 24000, "Human Resources"),
+  (7, "Human Resources Lead", 45000, "Human Resources"),
+  (8, "Payroll", 50000, "Accounting"),
+  (9, "Warehouse Management", 38000, "Warehouse"),
+  (10, "Human Resources Manager", 50000, "Human Resources"),
+  (11, "Whatever-Kevin Does", 30000, "Accounting");
 
-
-
+-- Insert employees
 INSERT INTO employee (id, first_name, last_name, job_title, department_name, salary, manager_name)
 VALUES 
   (1, "Michael", "Scott", "Manager", "Management", 65000, "Jan Levinson"),
-  (2, "Dwight", "Schrute", "Assistant-to-the-Manager", "Sales", 35000, "Michael Scott"),
+  (2, "Dwight", "Schrute", "Assistant-to-the-Manager", "Management", 35000, "Michael Scott"),
   (3, "Jim", "Halpert", "Paper Salesmen", "Sales", 35000, "Michael Scott"),
   (4, "Pam", "Beesly", "Paper Salesmen", "Sales", 35000, "Michael Scott"),
   (5, "Oscar", "Martinez", "Budget Management", "Accounting", 50000, "Michael Scott"),
