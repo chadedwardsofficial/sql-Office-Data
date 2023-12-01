@@ -1,5 +1,5 @@
 # sql-Office-Data
-  - Application Screenshot : 
+  - Application Screenshot : ![Alt text](image.png)
   
   ## Description
   This application is created to display an office SQL database where the user can create and update employees, roles and departments. 
@@ -12,7 +12,7 @@
   - [Questions](#questions)
   
   ## Installation
-  Any user can clone the repository provided here "https://github.com/chadedwardsofficial/sql-Office-Data". 
+  Any user can clone the repository provided here "https://github.com/chadedwardsofficial/sql-Office-Data". Please make sure you download correct dependencies for your package-json file which is inquirer and mysql2.
   
   ## Usage
   To use the provided application, open up vs-code, run an integrated terminal. Run mysql -uroot -p(if you have a password);

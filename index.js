@@ -147,10 +147,9 @@ function addRole() {
         message: "Role Salary?",
       },
       {
-        type: "list",
+        type: "input",
         name: "department",
-        message: "Which department does the role belong to?",
-        choices: ["Accounting", "Sales", "Management", "Human Resources", "Warehouse"],
+        message: "Which Department?",
       },
     ])
     .then((res) => {
@@ -190,28 +189,14 @@ function addEmployee() {
         message: "Employee Last Name?",
       },
       {
-        type: "list",
+        type: "input",
         name: "department",
-        message: "What department are they in?",
-        choices: ["Accounting", "Sales", "Management", "Human Resources", "Warehouse"],
+        message: "What is their Department?",
       },
       {
-        type: "list",
+        type: "input",
         name: "job_title",
-        message: "What is the employee's role?",
-        choices: [
-          "Manager",
-          "Paper Salesmen",
-          "Receptionist",
-          "Human Resources",
-          "Budget Management",
-          "Warehouse Management",
-          "Payroll",
-          "Quality Assurance",
-          "Whatever-Kevin-Does",
-          "Assistant-to-the-Manager",
-          "Human Resources Lead",
-        ], 
+        message: "What is their Job Title?",
       },
       {
         type: "input",
@@ -298,50 +283,3 @@ function updateEmployeeRole() {
 
 
 
-
-// Ask for the ID of the Employee 
-// What do you want their new role to be? LIST all roles 
-// Take input
-
-
-// update employee SET role = ? WHERE id = ? , employeedata, callbackfunction
-
-
-// let employeeRoledata = ['res.id','res.role']
-// db.query("UPDATE employee SET role = ? WHERE id = ?", employeeRoledata, function (err, results) {
-//   if (err) throw err;
-//   console.log(`Added Employee!`);
-//   loadPrompts();
-// });
-// });
-
-
-
-
-
-
-// When application starts, loads prompts
-
-// Prompt User a  List of things they'd want to do
-
-// -- Add Department              DONE
-// -- Add Employee                DONE
-// -- Add Role                    DONE
-// -- View ALl Departments        DONE
-// -- View AlL Employees          DONE
-// -- View ALL Roles              DONE
-// - Quit
-
-// When User Selects Add Department , runs addDepartment() Function which prompts another inquirer prompt to Type in Department Name and ID
-
-// When User Selects Add Employee , runs addEmployee() Function which prompts another inquirer prompt to Type in first_name, last_name, role_id, manager_id, department_id
-
-// When User Selects Add Role , runs addRole() Function which prompts another inquirer prompt to Type in role_id, title, salary, and department_id
-
-// After Each Add Function, have an Update Department/Employee/Role Function
-
-// When user Selects View ALL Departments, it runs a query to show all Departments in a Table in the Command Line. console.table ---
-
-// When user Selects View ALL Roles, it runs a query to show all Roles in a table in the command line. console.table ---
-
-// When user Selects View ALL Employees, it runs a query to show all Employees in a table in the command line. console.table ---
