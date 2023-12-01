@@ -36,16 +36,8 @@ function loadPrompts() {
             value: "view_roles",
           },
           {
-            name: "Update Department",
-            value: "update_department",
-          },
-          {
-            name: "Update Employee",
-            value: "update_employee",
-          },
-          {
-            name: "Update Role",
-            value: "update_role",
+            name: "Update Employee Role",
+            value: "update_employee_role",
           },
           {
             name: "Quit",
@@ -75,14 +67,8 @@ function loadPrompts() {
         case "view_roles":
           viewRoles();
           break;
-        case "update_department":
-          updateDepartment();
-          break;
-        case "update_employee":
-          updateEmployee();
-          break;
-        case "update_role":
-          updateRole();
+        case "update_employee_role":
+          updateEmployeeRole();
           break;
         default:
           quit();
@@ -190,7 +176,6 @@ function addRole() {
 
 
 
-
 function addEmployee() {
   inquirer
     .prompt([
@@ -266,8 +251,69 @@ function addEmployee() {
 
 
 
+function updateEmployeeRole() {
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "id",
+        message: "Employee's ID?",
+      },
+      {
+        type: "list",
+        name: "job_title",
+        message: "What is the new employee's role?",
+        choices: [
+          "Manager",
+          "Paper Salesmen",
+          "Receptionist",
+          "Human Resources",
+          "Budget Management",
+          "Warehouse Management",
+          "Payroll",
+          "Quality Assurance",
+          "Whatever-Kevin-Does",
+          "Assistant-to-the-Manager",
+          "Human Resources Lead",
+        ],
+      },
+    ])
+    .then((res) => {
+      
+      let employeeRoleData = [res.job_title, res.id];
+
+   
+      db.query("UPDATE employee SET job_title = ? WHERE id = ?", employeeRoleData, function (err, results) {
+        if (err) throw err;
+        console.log(`Updated Employee Role!`);
+        loadPrompts();
+      });
+    });
+}
 
 
+
+
+
+
+
+
+
+// Ask for the ID of the Employee 
+// What do you want their new role to be? LIST all roles 
+// Take input
+
+
+// update employee SET role = ? WHERE id = ? , employeedata, callbackfunction
+
+
+// let employeeRoledata = ['res.id','res.role']
+// db.query("UPDATE employee SET role = ? WHERE id = ?", employeeRoledata, function (err, results) {
+//   if (err) throw err;
+//   console.log(`Added Employee!`);
+//   loadPrompts();
+// });
+// });
 
 
 
