@@ -8,7 +8,6 @@
   - [Installation](#installation)
   - [Usage](#usage)
   - [Contributing](#contributing)
-  - [Tests](#tests)
   - [Questions](#questions)
   
   ## Installation
@@ -20,7 +19,7 @@
   
   ## Demo
   - Application Video :  https://drive.google.com/file/d/1v30_fEnKzQx9fxnY5Z4zTjhb554FQzvR/view
-  
+
   
   ## Contributing
   Contributors were Inquirer@8.2.4 for prompting user, mysql2. 
